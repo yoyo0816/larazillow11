@@ -1,9 +1,17 @@
 import { defineConfig } from 'vite';
+// import { createHtmlPlugin } from 'vite-plugin-html';
+// import vueDevTools from 'vite-plugin-vue-devtools';
+import vueDevtools from 'vite-plugin-vue-devtools';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     plugins: [
+      // vueDevTools(),
+      // createHtmlPlugin({}),
+      vueDevtools({
+        enabled: true, // 显式启用 devtools
+      }),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
